@@ -1,16 +1,59 @@
+@font-face {
+  font-family: "Phosphene";
+  src: url("./assets/fonts/PhospheneFont-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Garamondt";
+  src: url("./assets/fonts/Garamondt-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Garamondt";
+  src: url("./assets/fonts/Garamondt-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Garamondt, Phosphene, system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  min-height: 100vh;
+
+  --font-phosphene: "Phosphene", serif;
+  --font-garamondt: "Garamondt", serif;
+
+  --font-heading: "Phosphene", serif;
+  --font-body: "Garamondt", serif;
+
+  --background-color: #1D1652;
+  --text-color: #41B8EA;
+
+  --dark-bg: #1D1652;
+  --dark-text: #41B8EA;
+  --light-bg: white;
+  --light-text: black;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text-color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --standard-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --standard-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
 }
 
 a {
@@ -22,10 +65,14 @@ a:hover {
   color: #535bf2;
 }
 
+h1{
+  font-family: var(--font-heading);
+}
+
 body {
+  font-family: var(--font-body);
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -35,34 +82,3 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
