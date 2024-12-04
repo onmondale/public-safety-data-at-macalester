@@ -34,13 +34,21 @@
   --font-heading: "Phosphene", serif;
   --font-body: "Garamondt", serif;
 
-  --background-color: #1D1652;
-  --text-color: #41B8EA;
+  --background-color: #435325;
+  --text-color: #E9B321;
+  --accent-color: #CB4599;
 
-  --dark-bg: #1D1652;
-  --dark-text: #41B8EA;
+  --color-bg: #435325;
+  --color-text: #E9B321;
+  --color-accent: #CB4599;
+
   --light-bg: white;
   --light-text: black;
+  --light-accent: #699BD0;
+
+  --dark-bg: black;
+  --dark-text: white;
+  --dark-accent: #7AC25B;
 
   color-scheme: light dark;
   color: var(--text-color);
@@ -51,8 +59,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --standard-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --standard-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --standard-heading: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --standard-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 }
 

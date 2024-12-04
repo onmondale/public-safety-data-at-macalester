@@ -7,22 +7,34 @@ import IncidentData from "./components/IncidentData";
 import Discussion from "./components/Discussion";
 
 type Page = "home" | "dataVisualizations" | "incidentData" | "discussion";
+type Theme = "color" | "light" | "dark";
 
 function App() {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [theme, setTheme] = useState<Theme>("color");
   const [page, setPage] = useState<Page>("home");
   const [useStandardFonts, setUseStandardFonts] = useState(false);
 
-  const setTheme = (isDark: boolean) => {
-    setIsDarkTheme(isDark);
-    document.documentElement.style.setProperty(
-      "--background-color",
-      isDark ? "var(--dark-bg)" : "var(--light-bg)"
-    );
-    document.documentElement.style.setProperty(
-      "--text-color",
-      isDark ? "var(--dark-text)" : "var(--light-text)"
-    );
+  const updateTheme = (newTheme: Theme) => {
+    setTheme(newTheme);
+    const root = document.documentElement;
+
+    switch (newTheme) {
+      case "color":
+        root.style.setProperty("--background-color", "var(--color-bg)");
+        root.style.setProperty("--text-color", "var(--color-text)");
+        root.style.setProperty("--accent-color", "var(--color-accent)");
+        break;
+      case "light":
+        root.style.setProperty("--background-color", "var(--light-bg)");
+        root.style.setProperty("--text-color", "var(--light-text)");
+        root.style.setProperty("--accent-color", "var(--light-accent)");
+        break;
+      case "dark":
+        root.style.setProperty("--background-color", "var(--dark-bg)");
+        root.style.setProperty("--text-color", "var(--dark-text)");
+        root.style.setProperty("--accent-color", "var(--dark-accent)");
+        break;
+    }
   };
 
   const toggleFonts = () => {
@@ -54,7 +66,10 @@ function App() {
     <>
       <div className="headerContainer">
         <div className="leftColumn">
-          <h1 className="title">🌀 PUBLIC SAFETY DATA AT MACALESTER COLLEGE</h1>
+          <h1 className="title">
+            <span className="titleIcon">🌀</span> PUBLIC SAFETY DATA AT
+            MACALESTER COLLEGE
+          </h1>
           <h2 className="subtitle">
             Making Public Safety Data Accessible and Visible
             <br /> A Platform for Discussion
@@ -65,23 +80,33 @@ function App() {
             <div className="themeToggleRow">
               <div
                 className="toggleContainer"
-                onClick={() => setTheme(true)}
-                data-selected={isDarkTheme}
+                onClick={() => updateTheme("color")}
+                data-selected={theme === "color"}
               >
                 <span className="toggleIndicator">
-                  {isDarkTheme ? "🐦" : ""}
+                  {theme === "color" ? "🐦" : ""}
                 </span>
-                <span className="toggleLabel">Dark Mode</span>
+                <span className="toggleLabel">Color Theme</span>
               </div>
               <div
                 className="toggleContainer"
-                onClick={() => setTheme(false)}
-                data-selected={!isDarkTheme}
+                onClick={() => updateTheme("light")}
+                data-selected={theme === "light"}
               >
                 <span className="toggleIndicator">
-                  {!isDarkTheme ? "🐦" : ""}
+                  {theme === "light" ? "🐦" : ""}
                 </span>
-                <span className="toggleLabel">Light Mode</span>
+                <span className="toggleLabel">Light Theme</span>
+              </div>
+              <div
+                className="toggleContainer"
+                onClick={() => updateTheme("dark")}
+                data-selected={theme === "dark"}
+              >
+                <span className="toggleIndicator">
+                  {theme === "dark" ? "🐦" : ""}
+                </span>
+                <span className="toggleLabel">Dark Theme</span>
               </div>
             </div>
             <div
@@ -92,7 +117,7 @@ function App() {
               <span className="toggleIndicator">
                 {useStandardFonts ? "🐦" : ""}
               </span>
-              <span className="toggleLabel">Enable More Legible Fonts</span>
+              <span className="toggleLabel">Toggle More Legible Fonts</span>
             </div>
           </div>
           <p className="description">
