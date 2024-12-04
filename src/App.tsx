@@ -121,7 +121,7 @@ function App() {
             </div>
           </div>
           <p className="description">
-            Last Updated: <br /> December 13th, 2024 at 11:13:20 AM
+            Last Updated: <br /> December 13th, 2024 at 11:15:00 AM
           </p>
         </div>
       </div>
