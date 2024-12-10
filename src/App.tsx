@@ -150,14 +150,14 @@ function App() {
           className={`navButton ${page === "incidentData" ? "selected" : ""}`}
         >
           {page === "incidentData" && <span className="navIndicator">*</span>}
-          Incident Data
+          Incident Data/Code
         </button>
         <button
           onClick={() => setPage("discussion")}
           className={`navButton ${page === "discussion" ? "selected" : ""}`}
         >
           {page === "discussion" && <span className="navIndicator">*</span>}
-          Discussion/Individual Reporting
+          Community Survey
         </button>
       </nav>
 
