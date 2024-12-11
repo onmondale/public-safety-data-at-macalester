@@ -241,3 +241,16 @@
 .incidentDataMiniHeader {
   width: 100%;
 }
+
+/* Survey page */
+.surveyQuestion {
+  padding-left: 7%;
+  font-size: 1.4rem;
+}
+li.surveyAnswer {
+  font-size: 1rem;
+  list-style-position: inside;
+}
+.surveyReasoning>p {
+  margin-bottom: 20px;
+}
