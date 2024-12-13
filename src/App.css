@@ -1,3 +1,8 @@
+:root {
+  --font-heading: 'Anthony', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
 /* header + nav bar styles */
 #root {
   color: var(--text-color);
@@ -35,12 +40,13 @@
 
 .title {
   margin: 0;
-  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
   line-height: 1.3;
 }
 
 .titleIcon {
-  font-family: var(--font-phosphene);
+  font-family: var(--font-heading);
   color: var(--accent-color);
 }
 
@@ -68,6 +74,12 @@
   margin: 0;
 }
 
+.themeLabel {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
 .themeToggleRow {
   display: flex;
   gap: 1.5rem;
@@ -84,10 +96,10 @@
 .toggleIndicator {
   width: 1.5rem;
   color: var(--accent-color);
-  font-size: 1.2rem;
-  margin-top: -0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-top: -0.25rem;
   display: flex;
-  font-family: var(--font-phosphene);
   justify-content: center;
   align-items: center;
 }
@@ -177,14 +189,13 @@
 .dataVizHeaderContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .navIndicator {
-  font-family: var(--font-phosphene);
+  font-family: var(--font-heading);
   margin-right: 0.75rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 /* page styles */
@@ -290,4 +301,63 @@ li.surveyAnswer {
 }
 .surveyReasoning>p {
   margin-bottom: 20px;
+}
+
+.timeVisualizationImg {
+  border: 1px solid var(--text-color);
+  border-radius: 12px;
+  margin: 1rem;
+  max-width: 45%;
+  height: auto;
+}
+
+/* data visualizations main page styles */
+.dataViz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+
+.dataViz-header {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.dataViz-description {
+  text-align: center;
+  max-width: 60%;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.dataViz-buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.dataViz-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  flex: 0 1 auto;
+}
+
+.dataViz-button:hover {
+  background-color: var(--accent-color);
+  border-color: var(--text-color);
 }

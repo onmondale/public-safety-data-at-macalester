@@ -1,38 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
 @font-face {
-  font-family: "Phosphene";
-  src: url("./assets/fonts/PhospheneFont-Regular.woff") format("woff");
+  font-family: "Anthony";
+  src: url("./assets/fonts/Anthony.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Garamondt";
-  src: url("./assets/fonts/Garamondt-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Garamondt";
-  src: url("./assets/fonts/Garamondt-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
 
 :root {
-  font-family: Garamondt, Phosphene, system-ui, Helvetica, Arial, sans-serif;
+  font-family: Manrope, Anthony, system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   min-height: 100vh;
 
-  --font-phosphene: "Phosphene", serif;
-  --font-garamondt: "Garamondt", serif;
+  --font-manrope: "Manrope", sans-serif;
+  --font-anthony: "Anthony", sans-serif;
 
-  --font-heading: "Phosphene", serif;
-  --font-body: "Garamondt", serif;
+  --font-heading: "Anthony", sans-serif;
+  --font-body: "Manrope", sans-serif;
 
   /* the default color scheme */
 
@@ -65,11 +52,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
-  /* legible fonts */
-  --standard-heading: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --standard-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 }
 

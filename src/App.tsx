@@ -12,7 +12,6 @@ type Theme = "color" | "light" | "dark";
 function App() {
   const [theme, setTheme] = useState<Theme>("color");
   const [page, setPage] = useState<Page>("home");
-  const [useStandardFonts, setUseStandardFonts] = useState(false);
 
   const updateTheme = (newTheme: Theme) => {
     setTheme(newTheme);
@@ -37,24 +36,12 @@ function App() {
     }
   };
 
-  const toggleFonts = () => {
-    setUseStandardFonts(!useStandardFonts);
-    document.documentElement.style.setProperty(
-      "--font-heading",
-      !useStandardFonts ? "var(--standard-heading)" : "Phosphene, serif"
-    );
-    document.documentElement.style.setProperty(
-      "--font-body",
-      !useStandardFonts ? "var(--standard-body)" : "Garamondt, serif"
-    );
-  };
-
   const renderComponent = () => {
     switch (page) {
       case "home":
         return <Home />;
       case "dataVisualizations":
-        return <DataVisualizations />;
+        return <DataVisualizations theme={theme} />;
       case "incidentData":
         return <IncidentData />;
       case "survey":
@@ -67,7 +54,7 @@ function App() {
       <div className="headerContainer">
         <div className="leftColumn">
           <h1 className="title">
-            <span className="titleIcon">🌀</span> PUBLIC SAFETY DATA AT
+            <span className="titleIcon">◊</span> PUBLIC SAFETY DATA AT
             MACALESTER COLLEGE
           </h1>
           <h2 className="subtitle">
@@ -77,6 +64,7 @@ function App() {
         </div>
         <div className="rightColumn">
           <div className="themeButtons">
+            <div className="themeLabel">Select Color Theme:</div>
             <div className="themeToggleRow">
               <div
                 className="toggleContainer"
@@ -84,9 +72,9 @@ function App() {
                 data-selected={theme === "color"}
               >
                 <span className="toggleIndicator">
-                  {theme === "color" ? "🐦" : ""}
+                  {theme === "color" ? "△" : ""}
                 </span>
-                <span className="toggleLabel">Color Theme</span>
+                <span className="toggleLabel">Color</span>
               </div>
               <div
                 className="toggleContainer"
@@ -94,9 +82,9 @@ function App() {
                 data-selected={theme === "light"}
               >
                 <span className="toggleIndicator">
-                  {theme === "light" ? "🐦" : ""}
+                  {theme === "light" ? "△" : ""}
                 </span>
-                <span className="toggleLabel">Light Theme</span>
+                <span className="toggleLabel">Light</span>
               </div>
               <div
                 className="toggleContainer"
@@ -104,20 +92,10 @@ function App() {
                 data-selected={theme === "dark"}
               >
                 <span className="toggleIndicator">
-                  {theme === "dark" ? "🐦" : ""}
+                  {theme === "dark" ? "△" : ""}
                 </span>
-                <span className="toggleLabel">Dark Theme</span>
+                <span className="toggleLabel">Dark</span>
               </div>
-            </div>
-            <div
-              className="toggleContainer"
-              onClick={toggleFonts}
-              data-selected={useStandardFonts}
-            >
-              <span className="toggleIndicator">
-                {useStandardFonts ? "🐦" : ""}
-              </span>
-              <span className="toggleLabel">Toggle More Legible Fonts</span>
             </div>
           </div>
           <p className="description">
@@ -131,7 +109,7 @@ function App() {
           onClick={() => setPage("home")}
           className={`navButton ${page === "home" ? "selected" : ""}`}
         >
-          {page === "home" && <span className="navIndicator">*</span>}
+          {page === "home" && <span className="navIndicator">→</span>}
           Home Page
         </button>
         <button
