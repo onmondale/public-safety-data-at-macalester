@@ -4,9 +4,9 @@ import "./App.css";
 import Home from "./components/Home";
 import DataVisualizations from "./components/dataVisualizations";
 import IncidentData from "./components/IncidentData";
-import Discussion from "./components/Discussion";
+import Survey from "./components/Survey";
 
-type Page = "home" | "dataVisualizations" | "incidentData" | "discussion";
+type Page = "home" | "dataVisualizations" | "incidentData" | "survey";
 type Theme = "color" | "light" | "dark";
 
 function App() {
@@ -57,8 +57,8 @@ function App() {
         return <DataVisualizations />;
       case "incidentData":
         return <IncidentData />;
-      case "discussion":
-        return <Discussion />;
+      case "survey":
+        return <Survey />;
     }
   };
 
@@ -153,10 +153,10 @@ function App() {
           Incident Data/Code
         </button>
         <button
-          onClick={() => setPage("discussion")}
-          className={`navButton ${page === "discussion" ? "selected" : ""}`}
+          onClick={() => setPage("survey")}
+          className={`navButton ${page === "survey" ? "selected" : ""}`}
         >
-          {page === "discussion" && <span className="navIndicator">*</span>}
+          {page === "survey" && <span className="navIndicator">*</span>}
           Community Survey
         </button>
       </nav>
