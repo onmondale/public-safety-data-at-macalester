@@ -133,12 +133,8 @@
 }
 
 .navButton:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
+  background-color: var(--accent-color);
+  border-color: var(--text-color);
 }
 
 .navButton.selected {
@@ -150,6 +146,39 @@
   opacity: 1;
   color: var(--text-color);
   text-decoration: none;
+}
+
+.dataVizReturnButton {
+  border: 1px solid currentColor;
+  background: var(--background-color);
+  color: var(--text-color);
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 0.75rem 5rem;
+}
+
+.dataVizReturnButton:hover {
+  background: var(--accent-color);
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.dataVizHeader {
+  font-family: var(--font-heading);
+  margin-left: 3rem;
+  font-size: 3.5rem;
+}
+
+.dataVizHeaderContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .navIndicator {
@@ -175,6 +204,7 @@
   flex-direction: column;
   padding: 0;
   border-bottom: 1px solid currentColor;
+  align-items: center;
 }
 
 .contentSection:last-child {
@@ -185,12 +215,19 @@
   display: flex;
   padding: 2rem;
   padding-bottom: 0;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .sectionContent {
   padding: 2rem;
   font-size: 1.2rem;
   line-height: 1.6;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .sectionContent p {
