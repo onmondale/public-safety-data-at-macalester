@@ -18,56 +18,68 @@ function IncidentData() {
           </div>
         </div>
         <div className="sectionContent incidentDataContent">
-          <div className="incidentDataMiniHeader">Link:</div>
+          <div className="incidentDataMiniHeader">
+            Link to View Incident Data as Presented by Public Safety and
+            Macalester:
+          </div>
           <a
             className="incidentDataLink"
             href="https://www.macalester.edu/public-safety/cleryact/crime_fire_log/"
             target="_blank"
           >
-            Public Safety Crime and Fire Log on Macalester's website
+            <span className="incidentDataLink__icon">⛢</span>
+            Public Safety Crime and Fire Log
           </a>
-          <div className="incidentDataMiniHeader">Download:</div>
+          <div className="incidentDataMiniHeader">
+            Download the Data Parsed by Us from Public Safety's PDFs to CSVs:
+          </div>
           <a
-            className="incidentDataLink"
+            className="incidentDataLink incidentDataLink--allIncidents"
             href="/csvs/all_incidents.csv"
             download
           >
-            All incident data
+            <span className="incidentDataLink__icon">↓</span>
+            Download All Incident Data (CSV)
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/MCCFL_2018_Annual.csv"
             download
           >
-            2018 incident data
+            <span className="incidentDataLink__icon">↓</span>
+            2018 Incident Data
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/MCCFL_2019_Annual.csv"
             download
           >
-            2019 incident data
+            <span className="incidentDataLink__icon">↓</span>
+            2019 Incident Data
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/MCCFL_2020_Annual.csv"
             download
           >
-            2020 incident data
+            <span className="incidentDataLink__icon">↓</span>
+            2020 Incident Data
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/MCCFL_2021_Annual.csv"
             download
           >
-            2021 incident data
+            <span className="incidentDataLink__icon">↓</span>
+            2021 Incident Data
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/MCCFL_2022_Annual.csv"
             download
           >
-            2022 incident data
+            <span className="incidentDataLink__icon">↓</span>
+            2022 Incident Data
           </a>
           <div className="incidentDataMiniHeader"></div>
           <a
@@ -75,21 +87,28 @@ function IncidentData() {
             href="/csvs/all_unique_crime_types.csv"
             download
           >
-            All unique crime types
+            <span className="incidentDataLink__icon">↓</span>
+            All Unique Crime Types
           </a>
+          <div className="incidentDataMiniHeader">
+            {" "}
+            Other CSV Files Compiled from Data:
+          </div>
           <a
             className="incidentDataLink"
             href="/csvs/all_unique_dispositions.csv"
             download
           >
-            All unique dispositions
+            <span className="incidentDataLink__icon">↓</span>
+            All Unique Dispositions
           </a>
           <a
             className="incidentDataLink"
             href="/csvs/all_unique_locations.csv"
             download
           >
-            All unique locations
+            <span className="incidentDataLink__icon">↓</span>
+            All Unique Locations
           </a>
         </div>
       </section>
@@ -117,6 +136,7 @@ function IncidentData() {
             href="/src/assets/python/parsingpdfs.py"
             download
           >
+            <span className="incidentDataLink__icon"></span>
             Code to parse pdfs
           </a>
           <div className="incidentDataMiniHeader">
@@ -129,6 +149,7 @@ function IncidentData() {
             href="/src/assets/python/visualizations.py"
             download
           >
+            <span className="incidentDataLink__icon">↓</span>
             Code to create visualizations
           </a>
         </div>
