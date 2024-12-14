@@ -131,25 +131,25 @@ function DataVisualizations({ theme }: { theme: "color" | "light" | "dark" }) {
             <img
               id="minuteGraph"
               className="timeVisualizationImg"
-              src={`/src/assets/graphs/crimePerMinute${getThemeImageEnding()}.png`}
+              src={`/graphs/crimePerMinute${getThemeImageEnding()}.png`}
               alt="Crime reports by minute visualization"
             />
             <img
               id="hourGraph"
               className="timeVisualizationImg"
-              src={`/src/assets/graphs/crimePerHour${getThemeImageEnding()}.png`}
+              src={`/graphs/crimePerHour${getThemeImageEnding()}.png`}
               alt="Crime reports by hour visualization"
             />
             <img
               id="monthGraph"
               className="timeVisualizationImg"
-              src={`/src/assets/graphs/crimePerMonth${getThemeImageEnding()}.png`}
+              src={`/graphs/crimePerMonth${getThemeImageEnding()}.png`}
               alt="Crime reports by month visualization"
             />
             <img
               id="yearGraph"
               className="timeVisualizationImg"
-              src={`/src/assets/graphs/crimePerYear${getThemeImageEnding()}.png`}
+              src={`/graphs/crimePerYear${getThemeImageEnding()}.png`}
               alt="Crime reports by year visualization"
             />
           </div>

@@ -29,42 +29,42 @@ function IncidentData() {
           <div className="incidentDataMiniHeader">Download:</div>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/all_incidents.csv"
+            href="/csvs/all_incidents.csv"
             download
           >
             All incident data
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/MCCFL_2018_Annual.csv"
+            href="/csvs/MCCFL_2018_Annual.csv"
             download
           >
             2018 incident data
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/MCCFL_2019_Annual.csv"
+            href="/csvs/MCCFL_2019_Annual.csv"
             download
           >
             2019 incident data
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/MCCFL_2020_Annual.csv"
+            href="/csvs/MCCFL_2020_Annual.csv"
             download
           >
             2020 incident data
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/MCCFL_2021_Annual.csv"
+            href="/csvs/MCCFL_2021_Annual.csv"
             download
           >
             2021 incident data
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/MCCFL_2022_Annual.csv"
+            href="/csvs/MCCFL_2022_Annual.csv"
             download
           >
             2022 incident data
@@ -72,21 +72,21 @@ function IncidentData() {
           <div className="incidentDataMiniHeader"></div>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/all_unique_crime_types.csv"
+            href="/csvs/all_unique_crime_types.csv"
             download
           >
             All unique crime types
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/all_unique_dispositions.csv"
+            href="/csvs/all_unique_dispositions.csv"
             download
           >
             All unique dispositions
           </a>
           <a
             className="incidentDataLink"
-            href="/src/assets/csvs/all_unique_locations.csv"
+            href="/csvs/all_unique_locations.csv"
             download
           >
             All unique locations
