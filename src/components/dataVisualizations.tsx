@@ -387,7 +387,9 @@ function DataVisualizations({ theme }: { theme: "color" | "light" | "dark" }) {
               detailed information, and click on categories to learn more about
               a specific disposition. Please use the filter slider to the right
               of the main content to filter dispositions based off of Reported
-              Incident Count.
+              Incident Count. You can find some definitions of these dispositions 
+              at the bottom of <a href="https://www.macalester.edu/public-safety/cleryact/crime_fire_log/"
+                target="_blank" rel="noopener noreferrer">this</a> page.
             </strong>
           </p>
 

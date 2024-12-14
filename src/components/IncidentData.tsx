@@ -136,7 +136,7 @@ function IncidentData() {
             href="/src/assets/python/parsingpdfs.py"
             download
           >
-            <span className="incidentDataLink__icon"></span>
+            <span className="incidentDataLink__icon">↓</span>
             Code to parse pdfs
           </a>
           <div className="incidentDataMiniHeader">

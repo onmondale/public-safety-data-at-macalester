@@ -49,6 +49,10 @@ function App() {
     }
   };
 
+  let date = new Date().toDateString();
+  let time = new Date().toTimeString().slice(0,8);
+  
+
   return (
     <>
       <div className="headerContainer">
@@ -99,7 +103,7 @@ function App() {
             </div>
           </div>
           <p className="description">
-            Last Updated: <br /> December 13th, 2024 at 11:15:00 AM
+            Last Updated: <br /> { date + ", " + time }
           </p>
         </div>
       </div>

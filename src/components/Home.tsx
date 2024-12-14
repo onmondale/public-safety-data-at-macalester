@@ -3,18 +3,12 @@ function Home() {
     <div className="contentContainer">
       <section className="contentSection">
         <div className="sectionRow">
-          <h2 className="sectionHeader">Who Made This Site?</h2>
-          <div className="sectionDescription">
-            <p>
-              As three white male students, our gender and racial identities
-              impact the way we interact with public safety. Though we
-              approached this project with the intention to minimize bias and
-              promote awareness around the impacts of public safety, we are
-              unavoidably influenced by our subconscious biases, which may have
-              inadvertently impacted decisions around data cleaning, choices of
-              which visualizations to include, and the creation of our survey.
-            </p>
-          </div>
+          <h2 className="sectionHeader"
+          style = {{ 
+            width: "fit-content",
+            padding: "0"
+          }}
+          >Who Made This Site?</h2>
         </div>
         <div className="sectionContent">
           <div className="whoAreWeContainer">
@@ -29,10 +23,10 @@ function Home() {
                 className="whoAreWeImage"
               />
               <a
-                href="mailto:jzimmer1@macalester.edu"
+                href="mailto:jzimmer@macalester.edu"
                 className="whoAreWeEmailButton"
               >
-                jzimmer1@macalester.edu
+                jzimmer@macalester.edu
               </a>
               <p className="whoAreWeWhatWeDid">
                 Data Parsing, Visualizations, Copywriting, and Development
@@ -92,13 +86,25 @@ function Home() {
               In COMP194: Critical Race and Digital Studies, we have discussed
               the ways that policing and surveillance impact communities. This
               inspired us to look into the ways that security impacts our own
-              college campus community. We chose two datasets to represent this
-              — one created by Macalester Department of Public Safety and the
-              other that we would create by surveying the community. Each
-              dataset could be shown on its own, but ultimately, by putting the
-              two datasets together, we hope to demonstrate the way that Public
-              Safety’s documented actions relate to how the community reports on
-              their experience with Public Safety.
+              college campus community. We wanted to include Public Safety's perspective
+              as well as those of the students, faculty, and staff. The first dataset we used
+              is the one created by Macalester Department of Public Safety. The link can be 
+              found on the Incident Data tab of this site. The second data set we wanted to create
+              by surveying members of the Macalester community. These two datasets together
+              could create a more holistic display of how Public Safety interacts with the 
+              Macalester community. Though we were not able to send out the survey, we found
+              the creation of the survey to be thought provoking, and hope that you will read 
+              through the questions and consider how they relate to your experience.
+            </p>
+
+            <p>
+              As three white male students, our gender and racial identities
+              impact the way we interact with Public Safety. Though we
+              approached this project with the intention to minimize bias and
+              promote awareness around the impacts of Public Safety, we are
+              unavoidably influenced by our subconscious biases, which may have
+              inadvertently impacted decisions around data cleaning, choices of
+              which visualizations to include, and the creation of our survey.
             </p>
           </div>
         </div>
@@ -124,8 +130,8 @@ function Home() {
             The final component of the site is the survey. Though we did not
             collect data with this survey, we present the survey questions on
             the site as well as the research and decision making that went into
-            minimizing the bias of the survey. In the future, this tab would
-            also then include some visualizations of the findings.
+            minimizing the bias of the survey. In the future, this tab would allow you
+            to fill out the survey as well as see some visualizations of the findings.
           </p>
         </div>
       </section>

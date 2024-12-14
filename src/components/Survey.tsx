@@ -40,6 +40,19 @@ function Survey() {
           </ul>
 
           <ul className="surveyQuestion">
+            <div className="surveyQuestionText">Race/ethnicity (optional, select all that apply)</div>
+            <ul className="surveyAnswerList">
+            <li className="surveyAnswer">White</li>
+            <li className="surveyAnswer">Black or African American</li>
+            <li className="surveyAnswer">Native American</li>
+            <li className="surveyAnswer">Asian</li>
+            <li className="surveyAnswer">Native Hawaiian or Pacific Islander</li>
+            <li className="surveyAnswer">Hispanic</li>
+            <li className="surveyAnswer">Other</li>
+            </ul>
+          </ul>
+
+          <ul className="surveyQuestion">
             <div className="surveyQuestionText">
               Is there anything else about your identity or presentation you
               would like to share, as it may influence interactions with Public
@@ -72,6 +85,7 @@ function Survey() {
             </div>
             <ul className="surveyAnswerList">
               <li className="surveyAnswer">Report a crime</li>
+              <li className="surveyAnswer">Report a policy violation</li>
               <li className="surveyAnswer">Medical emergency</li>
               <li className="surveyAnswer">Escort</li>
               <li className="surveyAnswer">Fire</li>
@@ -94,8 +108,7 @@ function Survey() {
                 I feel like public safety doesn't do much.
               </li>
               <li className="surveyAnswer">
-                I feel less safe around Public safety due to how intimidating
-                they can be.
+                I feel less safe around Public safety.
               </li>
             </ul>
           </ul>
@@ -156,13 +169,12 @@ function Survey() {
             a fine art. <br />
             <br />
             With that in mind, I, <i>Allen</i>, was tasked with doing research
-            on how to craft high quality surveys. I took the rough draft my
-            groupmate had created and improved upon it. Although the three
-            different sources I found were all from different industries (travel
-            research, healthcare, and Pew Research), they all said similar
-            things, so I concluded the principles outlined in them are
-            universal. I used these sources to update the survey, so here are
-            the main takeaways I had that I used to make the survey more
+            on how to craft high quality surveys. I took our survey rough draft/outline
+            and improved upon it. Although the three different sources I found were 
+            all from different industries (travel research, healthcare, and 
+            Pew Research), they all said similar things, so I concluded the principles 
+            outlined in them are universal. I used these sources to update the survey, 
+            so here are the main takeaways I had that I used to make the survey more
             objective. <br />
             <br />
           </p>
@@ -198,9 +210,14 @@ function Survey() {
             understand. I removed the “extreme” modifiers because it makes the
             question harder to answer, and I split the “more unsafe” answer into
             two different ones. One for if the respondent thinks public safety
-            isn’t doing enough, and one for if they are actively intimidated by
-            their presence. This allows us to collect more useful data while
-            also making the question easier to answer.
+            isn’t doing enough, and one for if they are actively having a negative impact. 
+            This allows us to collect more useful data while
+            also making the question easier to answer. <br></br><br></br>
+          </p>
+          <p>
+            The last edit I made, despite not being in the sources I found, was
+            put in more privacy protection. I added a section to ask participants for
+            consent to use their quotes anonymously on the site.<br></br><br></br>
           </p>
           <p
             style={{
@@ -209,17 +226,12 @@ function Survey() {
               paddingBottom: "4rem",
             }}
           >
-            The last edit I made, despite not being in the sources I found, was
-            put in more privacy protection. I removed the question asking about
-            race and replaced it with an open ended “anything else you want to
-            share about your identity” question, and allowed participants to
-            consent to their quotes being used anonymously. In a survey going
-            out to all of campus, asking about race would be an important factor
-            because of the biases police-like figures often show. However, since
-            this was only going out to this class(??), I figured it could
-            compromise people’s anonymity, and is an unnecessary thing to ask
-            for such a low amount of people.
+            If we were to get approval to send out this survey, we would both embed it into the site,
+            and create visual representations of the results. However, because we were not able to send out this
+            survey, we hope that reading the questions can prompt you to consider how you have experiened Public Safety,
+            and how that may relate to others' experiences as well as the other data set displayed on this site.
           </p>
+         
           <p>
             <a
               href="https://doi.org/10.1177/0047287513479842"
