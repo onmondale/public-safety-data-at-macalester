@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/discussion.tsx","./src/components/home.tsx","./src/components/incidentdata.tsx","./src/components/datavisualizations.tsx","./src/types/arcgis.d.ts"],"version":"5.7.2"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/home.tsx","./src/components/incidentdata.tsx","./src/components/survey.tsx","./src/components/tableauviz.tsx","./src/components/datavisualizations.tsx","./src/types/arcgis.d.ts"],"version":"5.7.2"}

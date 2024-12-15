@@ -48,11 +48,7 @@ function App() {
         return <Survey />;
     }
   };
-
-  let date = new Date().toDateString();
-  let time = new Date().toTimeString().slice(0,8);
   
-
   return (
     <>
       <div className="headerContainer">
@@ -103,7 +99,7 @@ function App() {
             </div>
           </div>
           <p className="description">
-            Last Updated: <br /> { date + ", " + time }
+            Last Updated: <br />Sat Dec 14 2024, 6:15 PM
           </p>
         </div>
       </div>
