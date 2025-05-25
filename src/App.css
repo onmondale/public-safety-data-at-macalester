@@ -8,7 +8,9 @@
   color: var(--text-color);
   background-color: var(--background-color);
   transition: all 1s ease;
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ::selection {
@@ -67,7 +69,6 @@
 
 .themeButtons {
   border: 2px solid var(--accent-color);
-  border-radius: 20px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -128,7 +129,7 @@
 .navBar {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: -40px;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid currentColor;
@@ -136,13 +137,19 @@
 
 .navButton {
   padding: 1rem 3rem;
-  border: 1px solid currentColor;
   background: transparent;
+  border: none;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  border-left: 1px solid currentColor;
   color: inherit;
-  border-radius: 40px;
   cursor: pointer;
   font-size: 1.25rem;
   font-family: var(--font-body);
+}
+
+.navButton:last-child {
+  border-right: 1px solid currentColor;
 }
 
 .navButton:hover {
@@ -165,7 +172,6 @@
   border: 1px solid currentColor;
   background: var(--background-color);
   color: var(--text-color);
-  border-radius: 40px;
   cursor: pointer;
   font-family: var(--font-body);
   display: flex;
@@ -191,6 +197,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 .dataVizSelectContainer {
@@ -202,7 +210,6 @@
   font-family: var(--font-body);
   padding: 0.5rem 1rem;
   padding-right: 2.5rem;
-  border-radius: 20px;
   border: 1px solid var(--text-color);
   background: var(--background-color);
   color: var(--text-color);
@@ -270,12 +277,12 @@
   justify-content: center;
   max-width: 1400px;
   margin: 0 auto;
-  width: calc(100% - 2rem);
+  width: calc(100% - 8rem);
 }
 
 .sectionContent {
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 16rem;
+  padding-right: 16rem;
   padding-bottom: 2rem;
   padding-top: 2rem;
   font-size: 1.2rem;
@@ -296,7 +303,7 @@
   margin: 0;
   text-align: left;
   padding-right: 2rem;
-  padding-left: 7%;
+  padding-left: 16%;
   font-family: var(--font-heading);
   font-size: 2.5rem;
 }
@@ -305,71 +312,497 @@
   width: 80%;
   font-size: 1.2rem;
   line-height: 1.6;
-  padding-right: 7%;
+  padding-right: 16%;
   margin-bottom: 2rem;
 }
-
 
 
 /* incident data and code page */ 
 .incidentDataContent {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-left: calc(2rem + 7%);
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 8rem 4rem 8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.incidentDataLink, .incidentDataLink:visited {
+.incidentDataSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--text-color);
+  background: var(--background-color);
+}
+
+.incidentDataMiniHeader {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.incidentDataButtonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.incidentDataLink {
   color: var(--text-color);
   border: 1px solid var(--text-color);
-  border-radius: 20px;
-  padding: 0.25rem 1.5rem;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  background: var(--background-color);
 }
 
 .incidentDataLink:hover, .incidentDataLink:focus, .incidentDataLink:active {
   background-color: var(--accent-color);
   color: var(--text-color);
-}
-
-.incidentDataLink:hover .incidentDataLink__icon, .incidentDataLink:focus .incidentDataLink__icon, .incidentDataLink:active .incidentDataLink__icon {
-  background-color: var(--text-color);
-  color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .incidentDataLink--allIncidents {
-  font-weight: bold;
-  background-color: var(--text-color);
-  color: var(--background-color);
-  border: none;
-}
-
-.incidentDataLink--allIncidents .incidentDataLink__icon {
-  border: 1px solid var(--background-color);
+  grid-column: 1 / -1;
+  justify-content: center;
 }
 
 span.incidentDataLink__icon {
   background-color: var(--text-color);
   color: var(--background-color);
   border-radius: 100%;
-  padding: 0.1rem 0.5rem;
-  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 1rem;
-  margin-left: -1rem;
-  font-size: 1.2rem;
-  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
-.incidentDataMiniHeader {
-  width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.incidentDataLink:hover .incidentDataLink__icon {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+}
+
+/* Large tablets and smaller */
+@media (max-width: 1200px) {
+  .headerContainer {
+    flex-direction: column;
+  }
+
+  .leftColumn, .rightColumn {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .navBar {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .navButton {
+    flex: 1 1 auto;
+    padding: 1rem 1.5rem;
+    min-width: 150px;
+    font-size: 1.1rem;
+  }
+
+  .sectionContent {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .sectionRow {
+    flex-direction: column;
+    width: calc(100% - 4rem);
+  }
+
+  .sectionHeader {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionDescription {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .whoAreWeContainer {
+    gap: 2rem;
+  }
+
+  .whoAreWeCard {
+    max-width: 300px;
+  }
+
+  .whoAreWeImage {
+    width: 200px;
+    height: 160px;
+  }
+
+  .dataViz-container {
+    padding: 1rem 4rem;
+  }
+
+  .dataViz-description {
+    max-width: 90%;
+  }
+
+  .dataViz-buttons-container {
+    flex-wrap: wrap;
+    padding-bottom: 6rem;
+  }
+
+  .dataViz-button {
+    width: calc(50% - 0.5rem);
+  }
+
+  .dataVizHeaderContainer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .timeVisualizationImg {
+    max-width: 90%;
+  }
+
+  .surveyContainer {
+    padding: 2rem 4rem;
+  }
+
+  .footer {
+    padding: 3rem 4rem 2rem 4rem;
+  }
+
+  /* Incident data specific styles */
+  .incidentDataContent {
+    padding: 0 4rem 3rem 4rem;
+  }
+
+  .incidentDataSection {
+    padding: 1.5rem;
+  }
+
+  .incidentDataButtonGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .themeButtons {
+    padding: 1rem;
+  }
+
+  .themeLabel {
+    font-size: 1.1rem;
+  }
+
+  .toggleLabel {
+    font-size: 1.1rem;
+  }
+
+  .navButton {
+    flex: 1 1 50%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .sectionContent {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .sectionRow {
+    padding: 1.5rem;
+    width: calc(100% - 2rem);
+  }
+
+  .sectionHeader {
+    font-size: 2rem;
+  }
+
+  .whoAreWeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .whoAreWeCard {
+    max-width: 100%;
+  }
+
+  .whoAreWeWhatWeDid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .dataViz-container {
+    padding: 1rem 2rem;
+  }
+
+  .dataViz-header {
+    font-size: 2.2rem;
+  }
+
+  .dataViz-description {
+    font-size: 1.1rem;
+  }
+
+  .dataViz-buttons-container {
+    padding-bottom: 4rem;
+  }
+
+  .dataViz-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .dataVizHeaderContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dataVizReturnButton {
+    font-size: 1.5rem;
+    padding: 0.5rem 3rem;
+  }
+
+  .timeVisualizationImg {
+    max-width: 100%;
+  }
+
+  .surveyContainer {
+    padding: 1.5rem 2rem;
+  }
+
+  .surveyReasoningHeader {
+    font-size: 2.2rem;
+  }
+
+  .surveyAnswerList.surveyAnswerList--grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    padding: 2rem;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Incident data specific styles */
+  .incidentDataContent {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .incidentDataSection {
+    padding: 1.25rem;
+  }
+
+  .incidentDataMiniHeader {
+    font-size: 1.2rem;
+  }
+
+  .incidentDataButtonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .incidentDataLink {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  span.incidentDataLink__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .leftColumn, .rightColumn {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .themeButtons {
+    padding: 0.75rem;
+  }
+
+  .themeToggleRow {
+    gap: 1rem;
+  }
+
+  .themeLabel {
+    font-size: 1rem;
+  }
+
+  .toggleLabel {
+    font-size: 1rem;
+  }
+
+  .navButton {
+    flex: 1 1 100%;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border-left: none;
+    border-right: none;
+  }
+
+  .sectionContent {
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .sectionRow {
+    padding: 1rem;
+    width: calc(100% - 1rem);
+  }
+
+  .sectionHeader {
+    font-size: 1.8rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
+  }
+
+  .whoAreWeImage {
+    width: 180px;
+    height: 140px;
+  }
+
+  .dataViz-container {
+    padding: 1rem;
+  }
+
+  .dataViz-header {
+    font-size: 1.8rem;
+  }
+
+  .dataViz-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .dataVizHeaderContainer {
+    padding: 0 1rem;
+  }
+
+  .dataVizReturnButton {
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+  }
+
+  .surveyContainer {
+    padding: 1rem;
+  }
+
+  .surveyQuestion {
+    padding: 1rem;
+  }
+
+  .surveyQuestionText {
+    font-size: 1.1rem;
+  }
+
+  .surveyAnswer {
+    font-size: 0.95rem;
+  }
+
+  .surveyAnswerList.surveyAnswerList--grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .footerHeading {
+    font-size: 1.3rem;
+  }
+
+  .footerSection {
+    font-size: 0.95rem;
+  }
+
+  /* Incident data specific styles */
+  .incidentDataContent {
+    padding: 0 1rem 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .incidentDataSection {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .incidentDataMiniHeader {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .incidentDataButtonGrid {
+    gap: 0.75rem;
+  }
+
+  .incidentDataLink {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  span.incidentDataLink__icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.75rem;
+  }
 }
 
 /* Survey page */
 .surveyContainer {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 8rem;
 }
 
 
@@ -382,7 +815,6 @@ span.incidentDataLink__icon {
   margin-bottom: 2rem;
   padding: 1.5rem;
   border: 1px solid var(--text-color);
-  border-radius: 20px;
   list-style: none;
 }
 
@@ -404,7 +836,6 @@ span.incidentDataLink__icon {
   padding: 0.5rem 1rem;
   margin-bottom: 0.5rem;
   border: 1px solid var(--text-color);
-  border-radius: 10px;
   background-color: var(--background-color);
   transition: all 0.2s ease;
 }
@@ -423,7 +854,6 @@ span.incidentDataLink__icon {
 
 .timeVisualizationImg {
   border: 1px solid var(--text-color);
-  border-radius: 12px;
   margin: 1rem;
   max-width: 45%;
   height: auto;
@@ -434,7 +864,7 @@ span.incidentDataLink__icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 8rem;
   margin: 0 auto;
 }
 
@@ -448,7 +878,7 @@ span.incidentDataLink__icon {
 
 .dataViz-description {
   text-align: center;
-  max-width: 60%;
+  max-width: 70%;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -469,7 +899,6 @@ span.incidentDataLink__icon {
   background: transparent;
   border: 1px solid var(--text-color);
   color: var(--text-color);
-  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: var(--font-body);
@@ -483,8 +912,12 @@ span.incidentDataLink__icon {
 
 .whoAreWeContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .whoAreWeCard {
@@ -493,6 +926,7 @@ span.incidentDataLink__icon {
   align-items: center;
   text-align: center;
   flex: 1;
+  max-width: 400px;
 }
 
 .whoAreWeImage {
@@ -500,7 +934,6 @@ span.incidentDataLink__icon {
   height: 200px;
   margin-top: 1rem;
   object-fit: cover;
-  border-radius: 20px;
   border: 2px solid var(--text-color);
   margin-bottom: 1rem;
 }
@@ -510,9 +943,11 @@ span.incidentDataLink__icon {
   padding-right: 2rem;
   font-size: 1rem;
   font-style: italic;
+  width: 100%;
 }
 
 .whoAreWeInfo {
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -538,7 +973,6 @@ span.incidentDataLink__icon {
   margin-top: 0.5rem;
   padding: 0.5rem 1.5rem;
   border: 1px solid;
-  border-radius: 20px;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -550,4 +984,75 @@ span.incidentDataLink__icon {
   border-color: var(--text-color);
   color: var(--text-color);
   background: var(--accent-color);
+}
+
+/* Footer styles */
+.footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--text-color);
+  padding: 4rem 8rem 2rem 8rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footerSection {
+  flex: 1;
+}
+
+.footerHeading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.footerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerList li {
+  margin-bottom: 0.5rem;
+}
+
+.footerList a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.footerList a:hover {
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
+}
+
+main {
+  flex: 1;
+}
+
+/* Update the section description within data visualizations */
+.contentContainer > div > .sectionDescription {
+  padding-left: 8rem;
+  padding-right: 8rem;
+  width: calc(100% - 16rem) !important;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.description-last-updated {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }

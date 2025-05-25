@@ -3,12 +3,15 @@ function Home() {
     <div className="contentContainer">
       <section className="contentSection">
         <div className="sectionRow">
-          <h2 className="sectionHeader"
-          style = {{ 
-            width: "fit-content",
-            padding: "0"
-          }}
-          >Who Made This Site?</h2>
+          <h2
+            className="sectionHeader"
+            style={{
+              width: "fit-content",
+              padding: "0",
+            }}
+          >
+            Who Made This Site?
+          </h2>
         </div>
         <div className="sectionContent">
           <div className="whoAreWeContainer">
@@ -86,15 +89,17 @@ function Home() {
               In COMP194: Critical Race and Digital Studies, we have discussed
               the ways that policing and surveillance impact communities. This
               inspired us to look into the ways that security impacts our own
-              college campus community. We wanted to include Public Safety's perspective
-              as well as those of the students, faculty, and staff. The first dataset we used
-              is the one created by Macalester Department of Public Safety. The link can be 
-              found on the Incident Data tab of this site. The second data set we wanted to create
-              by surveying members of the Macalester community. These two datasets together
-              could create a more holistic display of how Public Safety interacts with the 
-              Macalester community. Though we were not able to send out the survey, we found
-              the creation of the survey to be thought provoking, and hope that you will read 
-              through the questions and consider how they relate to your experience.
+              college campus community. We wanted to include Public Safety's
+              perspective as well as those of the students, faculty, and staff.
+              The first dataset we used is the one created by Macalester
+              Department of Public Safety. The link can be found on the Incident
+              Data tab of this site. The second data set we wanted to create by
+              surveying members of the Macalester community. These two datasets
+              together could create a more holistic display of how Public Safety
+              interacts with the Macalester community. Though we were not able
+              to send out the survey, we found the creation of the survey to be
+              thought provoking, and hope that you will read through the
+              questions and consider how they relate to your experience.
             </p>
 
             <p>
@@ -130,8 +135,9 @@ function Home() {
             The final component of the site is the survey. Though we did not
             collect data with this survey, we present the survey questions on
             the site as well as the research and decision making that went into
-            minimizing the bias of the survey. In the future, this tab would allow you
-            to fill out the survey as well as see some visualizations of the findings.
+            minimizing the bias of the survey. In the future, this tab would
+            allow you to fill out the survey as well as see some visualizations
+            of the findings.
           </p>
         </div>
       </section>

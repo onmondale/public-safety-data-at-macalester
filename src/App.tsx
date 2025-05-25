@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import Home from "./components/Home";
 import DataVisualizations from "./components/dataVisualizations";
 import IncidentData from "./components/IncidentData";
 import Survey from "./components/Survey";
+import Footer from "./components/Footer";
 
 type Page = "home" | "dataVisualizations" | "incidentData" | "survey";
 type Theme = "color" | "light" | "dark";
 
 function App() {
-  const [theme, setTheme] = useState<Theme>("color");
+  const [theme, setTheme] = useState<Theme>("light");
   const [page, setPage] = useState<Page>("home");
+
+  useEffect(() => {
+    updateTheme("light");
+  }, []);
 
   const updateTheme = (newTheme: Theme) => {
     setTheme(newTheme);
@@ -48,7 +53,7 @@ function App() {
         return <Survey />;
     }
   };
-  
+
   return (
     <>
       <div className="headerContainer">
@@ -98,8 +103,9 @@ function App() {
               </div>
             </div>
           </div>
-          <p className="description">
-            Last Updated: <br />Sat Dec 14 2024, 6:15 PM
+          <p className="description-last-updated">
+            Last Updated: <br />
+            Sat Dec 14 2024, 6:15 PM
           </p>
         </div>
       </div>
@@ -140,6 +146,7 @@ function App() {
       </nav>
 
       <main>{renderComponent()}</main>
+      <Footer />
     </>
   );
 }
